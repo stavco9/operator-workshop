@@ -1,0 +1,18 @@
+kind: DeploymentConfig
+apiVersion: v1
+metadata:
+  name: hellogo-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        name: hello-go
+    spec:
+      containers:
+        - name: hello-go
+          image: registry.infra.local:5000/user12/hello-go
+          ports:
+          - containerPort: 8012 
+  replicas: {{ hellogo_replicas }}
+  selector:
+    name: hello-go

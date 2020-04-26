@@ -1,0 +1,4 @@
+---
+# defaults file for Hello-go-role---
+state: absent
+hellogo_replicas: 2

@@ -1,0 +1,6 @@
+---
+- name: set hello-go deployment to {{ state }}
+  k8s:
+   state: "{{ state }}"
+   definition: "{{ lookup('template', 'hello-go-deployment.yml.j2') | from_yaml }}"
+   namespace: project-user12

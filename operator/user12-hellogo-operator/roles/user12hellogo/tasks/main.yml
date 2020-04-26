@@ -1,0 +1,25 @@
+---
+# tasks file for hellogo
+- name: start hellogo
+  k8s:
+    definition:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: '{{ meta.name }}-hellogo'
+        namespace: '{{ meta.namespace }}'
+      spec:
+        replicas: "{{size}}"
+        selector:
+          matchLabels:
+            app: hellogo
+        template:
+          metadata:
+            labels:
+              app: hellogo
+          spec:
+            containers:
+            - name: hellogo
+              image: "registry.infra.local:5000/user12/hello-go"
+              ports:
+                - containerPort: 8012 

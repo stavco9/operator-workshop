@@ -1,0 +1,7 @@
+apiVersion: hellogo.example.com/v1alpha1
+kind: User12hellogo
+metadata:
+  name: example-user12hellogo
+spec:
+  # Add fields here
+  size: 3

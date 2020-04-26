@@ -1,0 +1,5 @@
+---
+- version: v1alpha1
+  group: hellogo.example.com
+  kind: User12hellogo
+  role: user12hellogo
